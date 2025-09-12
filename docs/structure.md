@@ -5,10 +5,9 @@ manifests or Helm charts
 ## services
 go microservices
 
-## web
+## frontend 
 frontend, ha
 
 ## docs
 where i'll be typing my garbo
 
-```
