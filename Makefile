@@ -9,6 +9,11 @@ start:
 	helm show values nats/nats > charts/nats/default-nats.yaml
 	helm show values otel/opentelemetry-collector > charts/otel/default-otel-collector.yaml
 
+build:
+	eval $(minikube -p minikube docker-env) && \
+	docker  build -t subscriber ./services/subscriber/ && \
+	docker build -t publisher ./services/publisher/
+
 upgrade:
 	helm upgrade nats nats/nats -f charts/nats/nats.yaml
 	helm upgrade otel otel/opentelemetry-collector -f charts/otel/otel-collector.yaml
