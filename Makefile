@@ -11,7 +11,7 @@ start:
 
 build:
 	eval $(minikube -p minikube docker-env) && \
-	docker  build -t subscriber ./services/subscriber/ && \
+	docker build -t subscriber ./services/subscriber/ && \
 	docker build -t publisher ./services/publisher/
 
 upgrade:
