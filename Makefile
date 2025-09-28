@@ -16,3 +16,10 @@ upgrade:
 	helm upgrade nats nats/nats -f charts/nats/nats.yaml
 	helm upgrade otel otel/opentelemetry-collector -f charts/otel/otel-collector.yaml
 	helm upgrade jeager jaeger/jaeger -f charts/jaeger/jaeger.yaml
+
+build:
+	docker build -t publisher ./services/publisher
+	docker build -t subscriber ./services/subscriber
+
+# dev:
+# docker-compose up --build // gotta create a docker-compose like services/publisher/build/context (add each dockerfile) and depends_on: nats
