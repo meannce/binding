@@ -10,7 +10,9 @@ start:
 	# optional - show default values
 	helm show values nats/nats > charts/nats/default-nats.yaml
 	helm show values otel/opentelemetry-collector > charts/otel/default-otel-collector.yaml
+	helm show values jaeger/jaeger > charts/jaeger/default-jaeger.yaml
 
 upgrade:
 	helm upgrade nats nats/nats -f charts/nats/nats.yaml
 	helm upgrade otel otel/opentelemetry-collector -f charts/otel/otel-collector.yaml
+	helm upgrade jeager jaeger/jaeger -f charts/jaeger/jaeger.yaml
