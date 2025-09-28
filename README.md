@@ -9,3 +9,4 @@ im using minikube.
 # todo
 - probably will try to make this with helmfile at some point by curiosity
 
+`kubectl port-forward -n default "$POD_NAME" 8080:16686` regarding Jaeger. Have to find a way to get it working without using this commmand (i guess i could add it to makefile but im stubborn)
